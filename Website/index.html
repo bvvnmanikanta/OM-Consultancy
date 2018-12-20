@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {box-sizing: border-box}
+
+    /* Set height of body and the document to 100% */
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial;
+    }
+
+    /* Style tab links */
+    .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: 2px;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+    }
+
+    .tablink:hover {
+        background-color: #777;
+    }
+
+    /* Style the tab content (and add height:100% for full page content) */
+    .tabcontent {
+        color: white;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+    }
+
+    #Home {background-color:green;}
+    #About {background-color:rgb(153,0,102);}
+    #Services {background-color:rgb(51,204,153);}
+    #Contact {background-color:indigo;}
+</style>
+<style>
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255,255,0);
+    z-index: 2;
+    cursor: pointer;
+}
+</style>
+<style>
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+
+    <button class="tablink" onclick="openPage('Home',this,'green')" id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openPage('About',this,'rgb(153,0,102)')">About</button>
+    <button class="tablink" onclick="openPage('Services',this,'rgb(51,204,153)')">Services</button>
+    <button class="tablink" onclick="openPage('Contact',this,'indigo')">Contact</button>
+
+    <div id="Home" class="tabcontent">
+      <h2 style="text-align:center;">Welcome to OM Consultancy!</h2>
+      <center><img src="logo.png" alt="OM CONSULTANCY"></center>
+      <h3 style="text-align:center;">(Paper Publications & Projects)</h3>
+  </div>
+
+  <div id="Services" class="tabcontent">
+      <h2  style="text-align:center;">Services</h2>
+      <h3>Publications</h3>
+      <p onclick="on1()">To see list of Scopus/ESCI/ SCI/SCIE journals, click here</p>
+      <div id="overlay1" onclick="off1()" class="overlay">
+       <center>
+        <div style="color:black">
+            <h2><u>Publications</u></h2>
+            <ol style="text-align:left">
+               <li><a href="https://link.springer.com/journal/10586">Cluster Computing, Springer ( ISSN 1386-7857, 1573-7543)  SCI</a></li>
+               <li><a href="http://www.rintonpress.com/journals/jwe/">Journal of Web Engineering (JWE) ( ISSN 1540-9589)  SCI</a></li>
+               <li><a href="https://www.igi-global.com/journal/international-journal-information-technology-web/1093">International Journal of Information Technology and Web Engineering (IJITWE) ) (ISSN  1554-1045, 1554-1053) ESCI/Scopus</a></li>
+               <li><a href="http://www.ijpronline.com/">International Journal of Pharmaceutical Research (IJPR) (ISSN 1674-0440, 0975-2366)   Scopus</a></li>
+               <li><a href="http://www.indianjournals.com/Mobile/JournalDetails.aspx?target=journal&ccode=ijphrd">Indian Journal of Public Health Research & Development (IJPHRD) (ISSN 0976-0245,0976-5506)   Scopus</a></li>
+               <li><a href="http://www.jardcs.org/index.html">Journal of Advanced Research in Dynamical and Control Systems (JARDCS) (ISSN 1943-023X) Scopus</a></li>
+               <li><a href="http://www.iaeme.com/Ijmet/index.asp">INTERNATIONAL JOURNAL OF MECHANICAL ENGINEERING & TECHNOLOGY (IJMET) (ISSN 0976 – 6340, 0976 – 6359)  Scopus</a></li>
+               <li><a href="http://www.tjprc.org/journals.php?jtype=2&id=67">International Journal of Mechanical and Production Engineering Research and Development (IJMPERD) (ISSN  2249-6890, 2249-8001)  Scopus</a></li>
+               <li><a href="https://worldresearchjournals.com/biotech.aspx">Research Journal of BioTechnology ( ISSN 2278-4535, 0973-6263) ESCI/Scopus</a></li>
+               <li><a href="https://worldresearchjournals.com/chemistryhome.aspx">Research Journal of Chemistry and Environment ( ISSN 2278-4527, 0972-0626) Scopus</a></li>
+               <li><a href="https://www.sciencepubco.com/index.php/ijet/index">International Journal of Engineering &Technology (IJET)(UAE) (ISSN 2227-524X)   Scopus</a></li>
+               <li><a href="https://ijpam.eu/">International Journal of Pure and Applied Mathematics (IJPAM) (ISSN 1311-8080,1314-3395) Scopus</a></li>
+               <li><a href="http://www.inderscience.com/info/ingeneral/cfp.php?id=4044">International Journal of Technology Intelligence and Planning (IJTIP) (ISSN 1740-2840, 1740-2832) Scopus</a></li>
+           </ol>
+           <div style="text-align:left">    
+            Note:
+
+            <ul>
+               <li>Plagiarism report should be below 20% and it is mandatory.</li>
+               <li>Paper should be arranged according to the template. Template will be given once the author agree to publish their papers in above journals.</li>
+           </ul>
+       </div>
+
+   </div>
+</center>
+</div>
+<h3>Projects</h3>
+<p onclick="on2()">We not only deal with publications but also serve several projects in different research area in all engineering streams. To learn more, click here.</p>
+<div class="overlay" id="overlay2" onclick="off2()">
+   <center>
+    <div style="color:black">
+        <h2><u>Projects</u></h2>
+        <p>We can do B.Tech, M.tech and Ph.D projects in different streams.</p>
+        <ol style="text-align:left">
+           <li>Electrical & Electronics Engineering</li>
+           <li>Electronics & Communication Engineering</li>
+           <li>Mechanical Engineering</li>
+           <li>Computer Science Engineering</li>
+           <li>Civil Engineering</li>
+       </ol>  
+   </div>
+</center>
+</div>
+</div>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h2  style="text-align:center;">Contact</h2>
+  <button class="accordion">Managing Director</button>
+  <div class="panel" style="background-color:rgb(100,1,37)">
+   <div style="color:white">
+       <h3><b>B. Omkar Lakshmi Jagan</h3>
+        <p>Managing Director<br/><br/>
+            Mobile: +91-9705554134<br/><br/>
+        E-Mail: md.omconsultancy@gmail.com</p>
+        <p>Address:<br/>
+            Karlam Village, 
+            Cheepurupalli Mandal, 
+        Vizianagaram District</p>
+    </div>    
+</div>
+
+<button class="accordion">Manager</button>
+<div class="panel" style="background-color:rgb(0,48,78)">
+  <div style="color:white">
+   <h3><b>Sk. Hasane Ahammad</h3>
+    <p>Manager<br/><br/>
+        Mobile: +91-7901694134<br/><br/>
+    E-Mail: manager.omconsultancy@gmail.com</p>
+    <p>Address:<br/>
+    Near Time Hospital, Autonagar Gate, Vijayawada, Krishna District</p>
+</div>
+</div>
+
+<button class="accordion">Web Master</button>
+<div class="panel" style="background-color:green">
+  <div style="color:white">
+   <h3><b>Manikanta Bollapragada</h3>
+    <p>Web Master & IT Support<br/><br/>
+        Mobile: +91-8332963265<br/><br/>
+    E-Mail: bvvnmanikanta@gmail.com</p>
+    <p>Address:<br/>
+    Near Panchayath Office, Chinakondepudi, Seethanagaram Mandal, East Godavari District</p>
+</div>
+</div>
+</div>
+
+<div id="About" class="tabcontent">
+  <h2  style="text-align:center;">About Us</h2>
+  <p style="text-align:justify;">PAPER PUBLICATIONS are an ideal house of publications that accepts and promotes a creative research journals across the globe.  It serves as a vehicle of research and education between the modern youth and the experienced, competent and qualified professionals through their intellectual awakening. It invites better than the best in all branches of knowledge such as  Management,  Pharmacy, Mathematics and Engineering & Technology. It will provide a Strong platform for all those who wish to contribute their potentialities of knowledge to all peoples and all nations.</p>
+  <p style="text-align:justify;">PAPER PUBLICATIONS establishing a distinctive and independent profile in the international arena. PAPER PUBLICATIONS is known for its highest international standard in journal publications. PAPER PUBLICATIONS aims to provide a good work environment, to deliver useful products and services to our customers with excellent service, and to improve and grow in all our endeavors. PAPER PUBLICATIONS is blessed with many loyal authors and researchers. We are inspired by our opportunities.</p>
+</div>
+
+<script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+    }
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+    function on1() {
+        document.getElementById("overlay1").style.display = "block";
+    }
+    function on2() {
+        document.getElementById("overlay2").style.display = "block";
+    }
+    function off1() {
+        document.getElementById("overlay1").style.display = "none";
+    }
+    function off2() {
+        document.getElementById("overlay2").style.display = "none";
+    }
+</script>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight){
+          panel.style.maxHeight = null;
+      } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+  });
+  }
+</script>
+
+</body>
+</html> 
