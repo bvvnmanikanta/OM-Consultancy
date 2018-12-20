@@ -1,1 +1,0 @@
-# bvvnmanikanta.github.io
